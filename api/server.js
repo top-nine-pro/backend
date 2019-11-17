@@ -14,7 +14,7 @@ server.use(cors());
 server.use("/api/auth", authLogReg)
 
 server.get("/", (req, res) => {
-    res.send("My Top Nine")
+    res.send(`<h1>My Top Nine - Backend</h1>`)
 })
 
 module.exports = server;
