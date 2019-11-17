@@ -1,8 +1,8 @@
 # My Top Nine -- Backend
 
-**Register Users**
+## Register Users
 
-> Endpoint: 
+> Endpoint: /api/auth/register
 
 ### Expected Data
 
@@ -18,7 +18,9 @@
 
 `"Testing has been successfully created."`
 
-### Errors - Credentials or Unique Username
+### Errors
+
+> Username's **must** be unique to register a user.
 
 ```
 {
@@ -30,14 +32,11 @@
   ]
 }
 ```
+* * *
 
-```
-"There was an error with registration: Error: insert into `users` (`email`, `password`, `username`) values ('Testing@top-nine.com', '$2a$12$8mvPktgjaPFgfa4a1vKo6u6iMmbTWiT/apEWicuxNcE9rEmeg.TXq', 'Testing') - SQLITE_CONSTRAINT: UNIQUE constraint failed: users.email."
-```
+## Login Users
 
-**Login Users**
-
-> Endpoint: 
+> Endpoint: /api/auth/login
 
 ### Expected Data
 
@@ -64,3 +63,7 @@
   "message": "Invalid user credentials, unauthorized."
 }
 ```
+
+* * *
+
+## User Endpoints
