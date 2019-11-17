@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Top Nine",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/top-nine-pro/backend.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alec Blakeley",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/top-nine-pro/backend/issues"
