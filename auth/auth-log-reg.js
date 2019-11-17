@@ -33,6 +33,25 @@ router.post("/register", (req, res) => {
 });
 
 // Login User
+router.post("/login", (req, res) => {
+  let { username, password } = req.body;
+
+  Users.findBy({ username })
+    .first()
+    .then(user => {
+      if (user && bcrypt.compareSync(password, user.password)) {
+        const token = getJwtToken(user.username);
+        res
+          .status(200)
+          .json({ message: `Welcome back ${user.username}!`, token });
+      } else {
+        res.status(401).json({ message: "Invalid user credentials, unauthorized." });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({ message: `There was an error: ${error}.` });
+    });
+});
 
 // jwtToken Request
 function getJwtToken(username) {
