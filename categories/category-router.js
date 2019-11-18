@@ -8,7 +8,9 @@ router.get("/", (req, res) => {
       res.status(200).json(category);
     })
     .catch(error => {
-      res.status(500).json({ message: `Failed to get categories, error: ${error}.` });
+      res
+        .status(500)
+        .json({ message: `Failed to get categories, error: ${error}.` });
     });
 });
 

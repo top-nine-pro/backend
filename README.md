@@ -184,6 +184,32 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
   "message": "User credentials were not provided."
 }
 ```
+### GET specific User
+
+> Endpoint: /api/users/:id
+
+### Return Response
+
+```
+{
+  "id": 1,
+  "username": "VTe",
+  "email": "VTe.Dev@top-nine.com"
+}
+```
+
+### Errors
+
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+```
+{
+  "message": "Could not find a user with the given id."
+}
+```
 
 * * *
 
