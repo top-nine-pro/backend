@@ -135,6 +135,92 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
   "message": "Could not find a category with the given id."
 }
 ```
+### GET categories for a **specific** user
+
+> Endpoint: /api/categories/:id/user
+
+### Return Response
+
+```
+[
+  {
+    "id": 37,
+    "name": "Tom",
+    "imageUrl": "https://pbs.twimg.com/profile_images/1237550450/mstom_400x400.jpg",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 38,
+    "name": "Brick",
+    "imageUrl": "https://images.unsplash.com/photo-1570169797761-ee4ac3ef69a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 39,
+    "name": "Eiffel Tower",
+    "imageUrl": "https://images.unsplash.com/photo-1570115466660-840b6734c9e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 40,
+    "name": "Reading",
+    "imageUrl": "https://images.unsplash.com/photo-1570109621602-f50a75aa70d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 41,
+    "name": "Deer",
+    "imageUrl": "https://images.unsplash.com/photo-1559617104-b1de4ffa4556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 42,
+    "name": "Pumpkin",
+    "imageUrl": "https://images.unsplash.com/photo-1570107786026-f46e8c46f45a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 43,
+    "name": "Bus",
+    "imageUrl": "https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 44,
+    "name": "Lattern",
+    "imageUrl": "https://images.unsplash.com/photo-1570133435515-6cc11ee03072?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=339&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  },
+  {
+    "id": 45,
+    "name": "San Francisco",
+    "imageUrl": "https://images.unsplash.com/photo-1570133103227-96458ed32d7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=334&q=80",
+    "user_id": 5,
+    "username": "Tim"
+  }
+]
+```
+
+### Errors
+
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+```
+{
+  "message": "Could not find user category information for specified id."
+}
+```
 
 ### GET all Users
 

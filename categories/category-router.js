@@ -34,6 +34,26 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.get("/:id/user", (req, res) => {
+  const { id } = req.params;
+
+  Category.findByCategory(id)
+    .then(category => {
+      if (category.length > 0) {
+        res.status(200).json(category);
+      } else {
+        res.status(404).json({
+          message: "Could not find user category information for specified id."
+        });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: `Failed to get category information, error: ${error}.`
+      });
+    });
+});
+
 router.post("/", (req, res) => {
   const categoryData = req.body;
 

@@ -20,8 +20,10 @@ function findByCategory(id) {
       "categories.user_id",
       "users.username"
     )
-    .join("users")
-    .where({ "categories.user_id": id });
+    .join("users", function() {
+      this.on({ "users.id": "categories.user_id" });
+    })
+    .where({ "users.id": id });
 }
 
 function add(category) {
