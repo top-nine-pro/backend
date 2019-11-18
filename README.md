@@ -52,7 +52,8 @@
 ```
 {
   "message": "Welcome back Tim!",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlhdCI6MTU3NDAyODAyMywiZXhwIjoxNTc0MDU2ODIzfQ.8_bUJXCIE9zD0crWk_W3FaacAceVue3WOEmwi9YqNS0"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlhdCI6MTU3NDEwODE2MCwiZXhwIjoxNTc0MTM2OTYwfQ.NuVpPq9uQ4QqKrP6U4ZML63U7sjXyh4ytTzOmY-qLoU",
+  "id": "5"
 }
 ```
 
