@@ -136,6 +136,57 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
 }
 ```
 
+### GET all Users
+
+> Endpoint: /api/users/
+
+### Return Response
+
+```
+[
+  {
+    "id": 1,
+    "username": "VTe",
+    "email": "VTe.Dev@top-nine.com"
+  },
+  {
+    "id": 2,
+    "username": "JNo",
+    "email": "JNo.Dev@top-nine.com"
+  },
+  {
+    "id": 3,
+    "username": "NAn",
+    "email": "NAn.Dev@top-nine.com"
+  },
+  {
+    "id": 4,
+    "username": "COr",
+    "email": "COr.Dev@top-nine.com"
+  },
+  {
+    "id": 5,
+    "username": "Tim",
+    "email": "TimNotTom.Dev@top-nine.com"
+  }
+]
+```
+
+### Errors
+
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+```
+{
+  "message": "User credentials were not provided."
+}
+```
+
+* * *
+
 ### POST Category
 
 > Endpoint: /api/categories/
@@ -169,6 +220,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
   "message": "Invalid user credentials."
 }
 ```
+* * *
 
 ### DELETE Category
 

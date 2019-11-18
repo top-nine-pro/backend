@@ -5,10 +5,10 @@ const router = express.Router();
 router.get("/", (req, res) => {
   Category.find()
     .then(category => {
-      res.json(category);
+      res.status(200).json(category);
     })
     .catch(error => {
-      res.status(500).json({ message: `Failed to get categories: ${error}.` });
+      res.status(500).json({ message: `Failed to get categories, error: ${error}.` });
     });
 });
 
