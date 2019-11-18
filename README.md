@@ -105,3 +105,26 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
   "message": "Invalid user credentials."
 }
 ```
+
+### GET specific Category
+
+> Endpoint: /api/categories/:id
+
+### Return Response
+
+```
+  {
+    "id": 1,
+    "name": "Puppies",
+    "imageUrl": "https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg"
+  }
+```
+
+### Errors
+
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+
