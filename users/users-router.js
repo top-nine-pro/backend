@@ -14,6 +14,10 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+    
+})
+
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
 

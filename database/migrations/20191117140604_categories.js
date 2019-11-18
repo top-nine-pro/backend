@@ -3,9 +3,8 @@ exports.up = function(knex) {
     tbl.increments();
     tbl
       .string("name", 128)
-      .notNullable()
-      .unique();
-    tbl.string("imageUrl", 450).unique();
+      .notNullable();
+    tbl.string("imageUrl", 450);
     tbl
       .integer("user_id")
       .unsigned()
