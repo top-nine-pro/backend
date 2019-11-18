@@ -31,7 +31,8 @@ function addUserCategory(id, category) {
 
 function add(category) {
   return db("categories")
-    .insert(category, "id")
+    .returning("id")
+    .insert(category)
     .then(ids => {
       const [id] = ids;
       return findById(id);
