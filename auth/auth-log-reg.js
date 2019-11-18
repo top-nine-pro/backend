@@ -43,7 +43,7 @@ router.post("/login", (req, res) => {
         const token = getJwtToken(user.username);
         res
           .status(200)
-          .json({ message: `Welcome back ${user.username}!`, token });
+          .json({ message: `Welcome back ${user.username}!`, token, id: `${user.id}` });
       } else {
         res.status(401).json({ message: "Invalid user credentials, unauthorized." });
       }
