@@ -1,7 +1,7 @@
 const db = require("../database/dbConfig");
 
 function find() {
-  return db("categories").select("id", "name");
+  return db("categories").select("id", "name", "imageUrl");
 }
 
 function findById(id) {
