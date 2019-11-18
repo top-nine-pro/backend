@@ -6,6 +6,7 @@ const cors = require("cors");
 const authLogReg = require("../auth/auth-log-reg");
 const categories = require("../categories/category-router");
 const authenticate = require("../auth/auth-middleware");
+const users = require("../users/users-router");
 
 const server = express();
 
@@ -15,6 +16,7 @@ server.use(cors());
 
 server.use("/api/auth", authLogReg);
 server.use("/api/categories", authenticate, categories);
+server.use("/api/users", authenticate, users);
 
 server.get("/", (req, res) => {
   res.send(`<h1>My Top Nine - Backend</h1>`);

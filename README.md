@@ -190,7 +190,31 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
 ```
 ```
 {
-  "message": "Could not find the category with the specific id."
+  "message": "Could not find the category with the specified id."
+}
+```
+
+### DELETE User
+
+> Endpoint: /api/users/:id
+
+### Return Response
+
+```
+{
+  "message": "The user was successfully deleted."
+}
+```
+
+### Errors
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+```
+{
+  "message": "Could not find the user with the specified id."
 }
 ```
 

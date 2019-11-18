@@ -59,7 +59,7 @@ router.delete("/:id", (req, res) => {
           .json({ message: "The category was successfully deleted." });
       } else {
         res.status(404).json({
-          message: "Could not find the category with the specific id."
+          message: "Could not find the category with the specified id."
         });
       }
     })
