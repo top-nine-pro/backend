@@ -48,4 +48,26 @@ router.post("/", (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+
+  Category.remove(id)
+    .then(deleted => {
+      if (deleted) {
+        res
+          .status(200)
+          .json({ message: "The category was successfully deleted." });
+      } else {
+        res.status(404).json({
+          message: "Could not find the category with the specific id."
+        });
+      }
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: `Failed to delete the category, error: ${error}.` });
+    });
+});
+
 module.exports = router;

@@ -129,6 +129,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
   "message": "Invalid user credentials."
 }
 ```
+```
+{
+  "message": "Could not find a category with the given id."
+}
+```
 
 ### POST Category
 
@@ -159,6 +164,30 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
 ```
 {
   "message": "Invalid user credentials."
+}
+```
+
+### DELETE Category
+
+> Endpoint: /api/categories/:id
+
+### Return Response
+
+```
+{
+  "message": "The category was successfully deleted."
+}
+```
+
+### Errors
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+```
+{
+  "message": "Could not find the category with the specific id."
 }
 ```
 
