@@ -24,9 +24,18 @@ function findByCategory(id) {
     .where({ "categories.user_id": id });
 }
 
-function addCategory(id, category) {
+function addUserCategory(id, category) {
   let newCate = { ...category, "categories.id": id };
   return db("categories").insert(newCate);
+}
+
+function add(category) {
+  return db("categories")
+    .insert(category, "id")
+    .then(ids => {
+      const [id] = ids;
+      return findById(id);
+    });
 }
 
 function remove(id) {
@@ -39,6 +48,7 @@ module.exports = {
   find,
   findById,
   findByCategory,
-  addCategory,
+  addUserCategory,
+  add,
   remove
 };

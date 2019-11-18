@@ -32,4 +32,20 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.post("/", (req, res) => {
+  const categoryData = req.body;
+
+  Category.add(categoryData)
+    .then(category => {
+      res
+        .status(201)
+        .json({ message: "The category was successfully created." });
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: `Failed to create new category, error: ${error}.` });
+    });
+});
+
 module.exports = router;

@@ -74,6 +74,8 @@
 
 **Expected headers**
 ```
+Content-Type: application/json
+
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlhdCI6MTU3NDEwMTUwNiwiZXhwIjoxNTc0MTMwMzA2fQ.SfYjz_Lmto8wTAIyDnwxxSb6-lJyF1F3GuJJQwYB_tA
 ```
 
@@ -121,6 +123,38 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
 ```
 
 ### Errors
+
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+
+### POST Category
+
+> Endpoint: /api/categories/
+
+### Expected Data
+
+```
+{
+	"name": "Houses",
+	"imageUrl": "https://images.unsplash.com/photo-1574053129807-0fb8065719bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=679&q=80",
+	"user_id": 2
+}
+```
+
+### Return Response
+
+```
+{
+  "message": "The category was successfully created."
+}
+```
+
+### Errors
+
+> Category name and imageUrl **Must** be unique to create a new category.
 
 ```
 {
