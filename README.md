@@ -141,6 +141,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
 
 ### Expected Data
 
+> imageUrl is **not** required for posting categories. 
+
 ```
 {
 	"name": "Houses",
