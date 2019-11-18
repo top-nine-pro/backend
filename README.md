@@ -68,7 +68,7 @@
 
 ## User Endpoints
 
-**All User Endpoints have authentication are are looking for the following header, token will be different for each user**
+**All User Endpoints have authentication and are looking for the following header, token will be different for each user**
 
 ### Headers
 
