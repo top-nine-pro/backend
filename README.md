@@ -333,6 +333,50 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpbSIsImlh
 }
 ```
 * * *
+### PUT update Category information
+
+> Endpoint: /api/categories/:id
+
+### Expected Data
+
+```
+{
+	"id": 1,
+	"name": "Doggos",
+	"imageUrl": "https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
+	"user_id": 1
+}
+```
+
+### Return Response
+
+```
+{
+  "message": "Category has been successfully updated.",
+  "updatedCategory": 1
+}
+```
+
+### Errors
+
+```
+{
+  "message": "Invalid user credentials."
+}
+```
+```
+{
+  "message": "User credentials were not provided."
+}
+```
+```
+{
+  "message": "Could not find the category with that id."
+}
+```
+
+
+* * *
 
 ### DELETE Category
 
