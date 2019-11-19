@@ -5,10 +5,12 @@ const router = express.Router();
 router.get("/", (req, res) => {
   Category.find()
     .then(category => {
-      res.json(category);
+      res.status(200).json(category);
     })
     .catch(error => {
-      res.status(500).json({ message: `Failed to get categories: ${error}.` });
+      res
+        .status(500)
+        .json({ message: `Failed to get categories, error: ${error}.` });
     });
 });
 
@@ -29,6 +31,26 @@ router.get("/:id", (req, res) => {
       res
         .status(500)
         .json({ message: `Failed to get categories, error: ${error}.` });
+    });
+});
+
+router.get("/:id/user", (req, res) => {
+  const { id } = req.params;
+
+  Category.findByCategory(id)
+    .then(category => {
+      if (category.length > 0) {
+        res.status(200).json(category);
+      } else {
+        res.status(404).json({
+          message: "Could not find user category information for specified id."
+        });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: `Failed to get category information, error: ${error}.`
+      });
     });
 });
 
@@ -59,7 +81,7 @@ router.delete("/:id", (req, res) => {
           .json({ message: "The category was successfully deleted." });
       } else {
         res.status(404).json({
-          message: "Could not find the category with the specific id."
+          message: "Could not find the category with the specified id."
         });
       }
     })
