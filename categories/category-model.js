@@ -41,10 +41,17 @@ function remove(id) {
     .del();
 }
 
+function update(changes, id) {
+  return db("categories")
+    .where({ id })
+    .update(changes);
+}
+
 module.exports = {
   find,
   findById,
   findByCategory,
   add,
-  remove
+  remove,
+  update
 };

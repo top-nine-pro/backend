@@ -70,6 +70,31 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const changes = req.body;
+
+  Category.findById(id)
+    .then(category => {
+      if (category) {
+        Category.update(changes, id).then(updatedCategory => {
+          res
+            .status(200)
+            .json({ message: "Category has been successfully updated.", updatedCategory });
+        });
+      } else {
+        res
+          .status(404)
+          .json({ message: "Could not find the category with that id." });
+      }
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ message: `Failed to create new category, error: ${error}.` });
+    });
+});
+
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
 
