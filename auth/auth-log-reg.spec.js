@@ -5,7 +5,7 @@ const db = require("../database/dbConfig-Testing");
 // Test for registering a new user
 describe("auth-log-reg", () => {
   describe("/register and /login", () => {
-    it("should allow the user to create an account", async function() {
+    it("should allow the user to create an account", async () => {
       await request(server)
         .post("/api/auth/register")
         .send({
@@ -15,7 +15,7 @@ describe("auth-log-reg", () => {
         })
         .expect(201);
     });
-    it("should not allow the user to create an account", async function() {
+    it("should not allow the user to create an account", async () => {
       await request(server)
         .post("/api/auth/register")
         .send({
@@ -23,7 +23,7 @@ describe("auth-log-reg", () => {
         })
         .expect(400);
     });
-    it("should allow the user to signin to account", async function() {
+    it("should allow the user to signin to account", async () => {
       await request(server)
         .post("/api/auth/login")
         .send({
@@ -32,7 +32,7 @@ describe("auth-log-reg", () => {
         })
         .expect(200);
     });
-    it("should not allow the user to signin to account", async function() {
+    it("should not allow the user to signin to account", async () => {
       await request(server)
         .post("/api/auth/login")
         .send({

@@ -38,4 +38,16 @@ describe("category-router", () => {
       .set("Authorization", token)
       .expect(200);
   });
+  it("should post a new category", async () => {
+    await request(server)
+      .post("/api/categories")
+      .set("Authorization", token)
+      .send({
+        name: "Testing - House",
+        imageUrl:
+          "https://images.unsplash.com/photo-1574053129807-0fb8065719bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=679&q=80",
+        user_id: 2
+      })
+      .expect(201);
+  });
 });
