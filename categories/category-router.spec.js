@@ -1,8 +1,6 @@
 const request = require("supertest");
 const server = require("../api/server");
 
-// Need to have test for DELETE /api/categories/:id
-
 describe("category-router", () => {
   let token = null;
 
@@ -59,6 +57,12 @@ describe("category-router", () => {
           "https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
         user_id: 1
       })
+      .expect(200);
+  });
+  it("should DELETE a category", async () => {
+    await request(server)
+      .delete("/api/categories/2")
+      .set("Authorization", token)
       .expect(200);
   });
 });
