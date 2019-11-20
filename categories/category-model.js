@@ -7,6 +7,7 @@ function find() {
 function findById(id) {
   return db("categories")
     .select("id", "name", "imageUrl")
+    .orderBy("id")
     .where({ id })
     .first();
 }
@@ -23,6 +24,7 @@ function findByCategory(id) {
     .join("users", function() {
       this.on({ "users.id": "categories.user_id" });
     })
+    .orderBy("categories.id")
     .where({ "users.id": id });
 }
 
