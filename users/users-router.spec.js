@@ -25,4 +25,10 @@ describe("users-router", () => {
       .set("Authorization", token)
       .expect(200);
   });
+  it("should DELETE a specific user", async () => {
+    await request(server)
+      .delete("/api/users/4")
+      .set("Authorization", token)
+      .expect(200);
+  });
 });
