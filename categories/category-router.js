@@ -72,7 +72,8 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const changes = req.body;
+  const { name, imageUrl, user_id } = req.body;
+  const changes = { id, name, imageUrl, user_id };
 
   Category.findById(id)
     .then(category => {
