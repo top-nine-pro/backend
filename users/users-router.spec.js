@@ -19,4 +19,10 @@ describe("users-router", () => {
       .set("Authorization", token)
       .expect(200);
   });
+  it("should GET a specific user", async () => {
+    await request(server)
+      .get("/api/users/2")
+      .set("Authorization", token)
+      .expect(200);
+  });
 });
